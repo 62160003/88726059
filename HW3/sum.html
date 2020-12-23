@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum.html</title>
+</head>
+<body>
+    <b>4. โปรแกรม บวกสะสม - sum.html</b><br><br>
+    <input type="text" id="num1" placeholder="num1" size="1"> - <input type="text" id="num2" placeholder="num2" size="1">
+    <button onclick="sumFunc(num1.value,num2.value)">Summary</button>
+    <div id="disp"></div>
+<script>
+    function sumFunc(number1,number2) {
+        div = document.getElementById("disp");
+        div.innerHTML="";
+        sum = 0;
+        for(i=number1*1;i<=number2*1;i++){
+            if(i<number2){
+                div.innerHTML += i + " + "
+            }
+            else {
+                div.innerHTML += i + " = "
+            }
+            sum = sum + i;
+            if(i==number2){
+                div.innerHTML += sum;
+            }   
+        }
+    }
+</script>
+</body>
+</html>

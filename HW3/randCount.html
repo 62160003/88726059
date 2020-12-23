@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randCount.html</title>
+</head>
+<body>
+    <b>5. โปรแกรม สุ่มตัวเลข 0-99 - randCount.html</b><br><br>
+    <input type="text" id="num" placeholder=""> <button onclick="randCount()">สุ่ม</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ตัวเลข</th>
+                <th>ถูกสุ่ม(ครั้ง)</th>
+            </tr>
+        </thead>
+        <tbody id="result">
+        </tbody>
+    </table>
+<script>
+    function randCount() {
+        let x = document.querySelector('#num')
+            let result = document.querySelector('#result')
+
+            result.innerHTML = ''
+
+            let numbers = []
+            for (let i = 0; i < parseInt(num.value); i++) {
+                rn = Math.floor(Math.random() * 100)
+                numbers.push(rn)
+            }
+
+            numbers.sort((a, b) => a - b)
+
+            console.log(numbers)
+
+            let count = 1
+            let table = ``
+
+            for (let i = 1; i <= numbers.length; i++) {
+                if (numbers[i] == numbers[i - 1]) {
+                    count++
+                }
+                else {
+                    table += `<tr>
+                                <td>${numbers[i - 1]}</td>
+                                <td>${count}</td>
+                            </tr>`
+                    count = 1
+                }
+            }
+
+            result.innerHTML = table
+        }
+</script>
+</body>
+</html>
