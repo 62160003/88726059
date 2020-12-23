@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+</head>
+<body>
+    <b>1. โปรแกรม ทักทาย - hello.html</b>
+<br><br>
+    <input type="text" id="name" onkeyup="show(this.value)">    
+    <div id="hello"></div>
+<script>
+    function show(yourname) {
+        yourname = document.getElementById("name").value
+        document.getElementById("hello").innerHTML="Hello "+ yourname;
+    }
+</script>
+</body>
+</html>
