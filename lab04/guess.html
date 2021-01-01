@@ -8,6 +8,18 @@
 <body>
     <script>
         rn = Math.floor(Math.random()*10);
+        function guess(n){
+        document.getElementById("hist").innerHTML = n;
+        if(n == rn){
+            document.getElementById("result").innerHTML = "ถูกต้อง";
+        }
+        else if(n < rn){
+            document.getElementById("result").innerHTML = "น้อยไป";
+        }
+        else if(n > rn){
+            document.getElementById("result").innerHTML = "มากไป";
+        }  
+}
     </script>    
     <input type="number" placeholder="?" id="number">
     <button onclick="guess(document.getElementById('number').value)">Guess</button>
