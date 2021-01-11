@@ -6,20 +6,32 @@
     <title>Add</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script>
-        function addSong(name) {
-            
-        }
+        list = [];
+        var count = 0; 
+        function addSong(songname,artist,lyrics) {
+            song = [songname,artist,lyrics];
+            list.push(song);
+            console.log(list);
+            l = JSON.stringify(list);
+            localStorage.setItem("song"+(count+1), l);
+            count += 1;
+            console.log(count);
+            //document.getElementById("songname").value = "";
+            //document.getElementById("artist").value = "";
+            //document.getElementById("lyrics").value = "";
+        } 
     </script>
 </head>
 <body>
     <form>
         <div class="form-group">
             <label for="songname">Add new song [<a href ="searchsong.html">ค้นหาเพลง</a>]<br></label>
-            <input type="text" class="form-control" id="name" style="width:400px" placeholder="ชื่อเพลง"><br>
+            <input type="text" class="form-control" name="songname" id="songname" style="width:400px" placeholder="ชื่อเพลง"><br>
             <input type="text" class="form-control" id="artist" style="width:400px" placeholder="ศิลปิน"><br>
-            <input type="text" class="form-control" id="lyrics" style="width:400px" placeholder="เนื้อเพลง"><br>
-            <button onclick="" class="btn btn-success">Save</button>
-            <button onclick="" class="btn btn-danger">Clear Form</button>
+            <Textarea class="form-control" id="lyrics" rows="10" cols="50" style="width:400px" placeholder="เนื้อร้อง"></Textarea><br>
+            <button type="button" onclick="addSong(songname.value,artist.value,lyrics.value)" class="btn btn-success">Save</button>
+            <button type="button" onclick="" class="btn btn-danger">Clear Form</button>
+            <p id="disp"></p>
         </div>
     </form>
 </body>
