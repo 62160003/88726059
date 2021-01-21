@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function convert(n) {
+            var m1000,m500,m100,m50,m20,m10,m5,m2,m1,total;
+            m1000 = Math.floor(n/1000);
+            if(m1000==0){
+                document.getElementById('disp1').innerHTML = "แบ๊ง 1000 : ";
+            }
+            else{
+                document.getElementById('disp1').innerHTML = "แบ๊ง 1000 : " + m1000 + " ใบ";
+            }
+            total = n-(m1000*1000)
+            console.log(total);
+            m500 =  Math.floor(total/500);
+            if(m500==0){
+                document.getElementById('disp2').innerHTML = "แบ๊ง 500 : ";
+            }
+            else{
+                document.getElementById('disp2').innerHTML = "แบ๊ง 500 : " + m500 + " ใบ";
+            }
+            total = total-(m500*500)
+            console.log(total);
+            m100 =  Math.floor(total/100);
+            if(m100==0){
+                document.getElementById('disp3').innerHTML = "แบ๊ง 100 : ";
+            }
+            else{
+                document.getElementById('disp3').innerHTML = "แบ๊ง 100 : " + m100 + " ใบ";
+            }
+            total = total-(m100*100)
+            console.log(total);
+            m50 =  Math.floor(total/50);
+            if(m50==0){
+                document.getElementById('disp4').innerHTML = "แบ๊ง 50 : ";
+            }
+            else{
+                document.getElementById('disp4').innerHTML = "แบ๊ง 50 : " + m50 + " ใบ";
+            }
+            total = total-(m50*50)
+            console.log(total);
+            m20 =  Math.floor(total/20);
+            if(m20==0){
+                document.getElementById('disp5').innerHTML ="แบ๊ง 20 : ";
+            }
+            else{
+                document.getElementById('disp5').innerHTML = "แบ๊ง 20 : " + m20 + " ใบ";
+            }
+            total = total-(m20*20)
+            console.log(total);
+            m10 =  Math.floor(total/10);
+            if(m10==0){
+                document.getElementById('disp6').innerHTML ="เหรียญ 10 : ";
+            }
+            else{
+                document.getElementById('disp6').innerHTML = "เหรียญ 10 : " + m10 + " เหรียญ";
+            }
+            total = total-(m10*10)
+            console.log(total);
+            m5 =  Math.floor(total/5);
+            if(m5==0){
+                document.getElementById('disp7').innerHTML ="เหรียญ 5 : ";
+            }
+            else{
+                document.getElementById('disp7').innerHTML = "เหรียญ 5 : " + m5 + " เหรียญ";
+            }
+            total = total-(m5*5)
+            console.log(total);
+            m2 =  Math.floor(total/2);
+            if(m2==0){
+                document.getElementById('disp8').innerHTML ="เหรียญ 2 : ";
+            }
+            else{
+                document.getElementById('disp8').innerHTML = "เหรียญ 2 : " + m2 + " เหรียญ";
+            }
+            total = total-(m2*2)
+            console.log(total);
+            m1 =  Math.floor(total/1);
+            if(m1==0){
+                document.getElementById('disp9').innerHTML ="เหรียญ 1 : ";
+            }
+            else{
+                document.getElementById('disp9').innerHTML = "เหรียญ 1 : " + m1 + " เหรียญ";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" id="number"> 
+    <button onclick="convert(number.value)">Convert</button>
+    <div id="disp1"></div>
+    <div id="disp2"></div>
+    <div id="disp3"></div>
+    <div id="disp4"></div>
+    <div id="disp5"></div>
+    <div id="disp6"></div>
+    <div id="disp7"></div>
+    <div id="disp8"></div>
+    <div id="disp9"></div>
+</body>
+</html>
