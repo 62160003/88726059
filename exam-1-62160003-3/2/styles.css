@@ -1,0 +1,14 @@
+body {
+    font-family: Tahoma;
+    font-size: 12px;
+    background: url("images/42.jpg");
+    background-size: cover;
+
+}
+#sub {
+    background-color: #FFE4B5;
+}
+
+.a {
+    background-color: #FFFF99;
+}

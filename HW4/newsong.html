@@ -8,30 +8,32 @@
     <script>
         list = [];
         var count = 0; 
-        function addSong(songname,artist,lyrics) {
+        function addSong(songname,artist,lyrics){
             song = [songname,artist,lyrics];
             list.push(song);
             console.log(list);
-            l = JSON.stringify(list);
-            localStorage.setItem("song"+(count+1), l);
-            count += 1;
-            console.log(count);
-            //document.getElementById("songname").value = "";
-            //document.getElementById("artist").value = "";
-            //document.getElementById("lyrics").value = "";
+            localStorage.setItem("list",JSON.stringify(list));
+            document.getElementById('songname').value =""
+            document.getElementById('artist').value =""
+            document.getElementById('lyrics').value =""
+            document.getElementById("songname").focus();
         } 
+        function Clear() {
+            document.getElementById('songname').value =""
+            document.getElementById('artist').value =""
+            document.getElementById('lyrics').value =""
+        }
     </script>
 </head>
 <body>
     <form>
         <div class="form-group">
-            <label for="songname">Add new song [<a href ="searchsong.html">ค้นหาเพลง</a>]<br></label>
-            <input type="text" class="form-control" name="songname" id="songname" style="width:400px" placeholder="ชื่อเพลง"><br>
-            <input type="text" class="form-control" id="artist" style="width:400px" placeholder="ศิลปิน"><br>
-            <Textarea class="form-control" id="lyrics" rows="10" cols="50" style="width:400px" placeholder="เนื้อร้อง"></Textarea><br>
+            <b><font size="4">Add new song&nbsp</font></b><font size="3">[<a href ="searchsong.html">ค้นหาเพลง</a>]</font>
+            <input type="text" class="form-control" id="songname" placeholder="ชื่อเพลง" autoFocus><br>
+            <input type="text" class="form-control" id="artist" placeholder="ศิลปิน"><br>
+            <Textarea class="form-control" id="lyrics" rows="10" cols="50" placeholder="เนื้อร้อง"></Textarea><br>
             <button type="button" onclick="addSong(songname.value,artist.value,lyrics.value)" class="btn btn-success">Save</button>
-            <button type="button" onclick="" class="btn btn-danger">Clear Form</button>
-            <p id="disp"></p>
+            <button type="reset" onclick="Clear()" class="btn btn-danger">Clear Form</button>
         </div>
     </form>
 </body>

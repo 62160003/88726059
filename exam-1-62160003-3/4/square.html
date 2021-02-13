@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <script>
+        function triangleArea(s) {
+            var ans;
+            ans = s*s;
+            document.getElementById('disp').innerHTML = "&nbsp;พื้นที่สี่เหลี่ยมจตุรัส = " + ans;
+        }
+    </script>
+</head>
+<body>
+    <table cellpadding="5">
+        <tr>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+            <td><img src="images/square.jpg" height="120px"/></td>
+        </tr>
+    </table>
+    <table  cellpadding="5" >
+        <tr>
+            <td>
+                <h1>Square</h1>
+            </td>
+            <td>
+                <a href ="no4.html">back</a>
+            </td>
+        </tr>
+        <tr>
+            <td>ใส่ความยาวของด้าน</td>
+            <td>
+                <input type="number" id="side">
+                <button onclick="triangleArea(side.value)">Caculate</button>
+            </td>
+        </tr>
+    </table>
+    <div id="disp"></div>
+</body>
+</html>

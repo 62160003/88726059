@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+    <script>
+        function rectangleArea(w,l) {
+            var ans;
+            ans = w*l;
+            document.getElementById('disp').innerHTML = "&nbsp;พื้นที่สี่เหลี่ยมผืนผ้า = " + ans;
+        }
+    </script>
+</head>
+<body>
+    <table cellpadding="5">
+        <tr>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+            <td><img src="images/rectangle.jpg" height="120px"/></td>
+        </tr>
+    </table>
+    <table  cellpadding="5" >
+        <tr>
+            <td>
+                <h1>Rectangle</h1>
+            </td>
+            <td>
+                <a href ="no4.html">back</a>
+            </td>
+        </tr>
+        <tr>
+            <td>ใส่ความกว้าง</td>
+            <td>
+                <input type="number" id="width">
+            </td>
+        </tr>
+        <tr>
+            <td>ใส่ความยาว</td>
+            <td>
+                <input type="number" id="long">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="rectangleArea(width.value,long.value)">Caculate</button>
+            </td>
+        </tr>
+    </table>
+    <div id="disp"></div>
+</body>
+</html>

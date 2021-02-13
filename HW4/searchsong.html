@@ -5,24 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+        function nl2br(str,is_xhtml){
+            var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+            return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+        }
         function searchSong(name) {
-            JSON.parse(localStorage.getItem("song"));
-            for (i=1;i<10;i++) {
-                if(e.indexOf(name) == -1){
-
+            var count = 0;
+            song = "";
+            list = JSON.parse(localStorage.getItem("list"));
+            for(i=0;i<list.length;i++){
+                if(list[i][0].indexOf(name) >= 0){
+                    count++;
+                    song += '<div class="card">'+
+                                '<div class="card-body">'+
+                                    '<h4 class="card-title">'+"เพลง "+list[i][0]+'</h4>'+
+                                    '<h4 class="card-title">'+"ศิลปิน "+list[i][1]+'</h4>'+
+                                    '<p class="card-text">'+nl2br(list[i][2])+'</p>'+
+                                '</div>'+
+                            '</div>';
                 }
+                else if(list[i][0].indexOf(name) == -1){
+                    count = 0;
+                }
+            }
+            if(count>0) {
+                disp.innerHTML = '<div class="alert alert-success">'+'<strong>'+"พบ "+'</strong>'+count+" เพลง"+'</div>';
+                document.getElementById("disp").innerHTML += song;
+            }
+            else if(count==0) {
+                disp.innerHTML = '<div class="alert alert-danger">'+'<strong>'+"ไม่พบเพลง "+'</strong>'+name+'</div>';
             }
         }
     </script>
 </head>
 <body>
     <form>
-        <div class="form-group">
-            <label for="songname">ค้นหาเพลง [<a href ="newsong.html">เพิ่มเพลงใหม่</a>]<br></label>
-            <input type="text" class="form-control" id="name" style="width:400px" placeholder="ชื่อเพลงที่ต้องการค้นหา">
-            <button onclick="searchSong(songname.value)" class="btn btn-primary">ค้นหา</button>
+        <div class="form-group" style="padding: 15px 0px 15px 15px">
+            <b><font size="4">ค้นหาเพลง&nbsp</font></b>
+            <font size="3">[<a href ="newsong.html">เพิ่มเพลงใหม่</a>]</font>
+            <input type="text" class="form-control" id="songname" style="width:400px" placeholder="ชื่อเพลงที่ต้องการค้นหา">
+            <button type="button" onclick="searchSong(songname.value)" class="btn btn-primary">ค้นหา</button>
         </div>
+        <p id="disp"></p>
     </form>
 </body>
 </html>
