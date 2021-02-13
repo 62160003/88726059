@@ -32,18 +32,18 @@
                 }
             }
             if(count>0) {
-                disp.innerHTML = '<div class="alert alert-success">'+'<strong>'+"พบ "+'</strong>'+count+" เพลง"+'</div>';
-                document.getElementById("disp").innerHTML += song;
+                disp.innerHTML = '<div style="padding: 0px 20px 0px 20px">'+'<div class="alert alert-success">'+'<strong>'+"พบ "+'</strong>'+count+" เพลง"+'</div>'+'</div';
+                document.getElementById("disp").innerHTML += '<div style="padding: 0px 20px 0px 20px">'+song+'</div>';
             }
             else if(count==0) {
-                disp.innerHTML = '<div class="alert alert-danger">'+'<strong>'+"ไม่พบเพลง "+'</strong>'+name+'</div>';
+                disp.innerHTML = '<div class="alert alert-danger" style="padding: 20px 20px 20px 20px">'+'<strong>'+"ไม่พบเพลง "+'</strong>'+name+'</div>';
             }
         }
     </script>
 </head>
 <body>
     <form>
-        <div class="form-group" style="padding: 15px 0px 15px 15px">
+        <div class="form-group" style="padding: 20px 20px 20px 20px">
             <b><font size="4">ค้นหาเพลง&nbsp</font></b>
             <font size="3">[<a href ="newsong.html">เพิ่มเพลงใหม่</a>]</font>
             <input type="text" class="form-control" id="songname" style="width:400px" placeholder="ชื่อเพลงที่ต้องการค้นหา">
